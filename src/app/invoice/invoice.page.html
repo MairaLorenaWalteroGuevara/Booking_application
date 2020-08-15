@@ -1,0 +1,210 @@
+<ion-header>
+  <!-- Invoce HTML template  https://github.com/sparksuite/simple-html-invoice-template/blob/master/invoice.html 
+  SHOW INFO AND CHOSSING INFO https://stackblitz.com/edit/ionic-3-how-to-set-ion-option-as-selected?file=pages%2Fhome%2Fhome.html-->
+  <ion-toolbar color="primary">
+    <ion-title>Invoice</ion-title>
+    <ion-buttons slot="primary">
+    	<ion-back-button text="Back" icon="" color="light" fill="outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class= "content">
+  <div class="item">
+    <ion-row >
+      <ion-col>
+        <div style="text-align: center;">Invoice number 
+          <ion-input [(ngModel)]="ninvoice"></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>Date invoice:</div>
+      </ion-col>
+      <ion-col>
+        <div>{{today}}</div>
+      </ion-col>
+    </ion-row>
+    <ion-label >To:</ion-label>
+    <br>
+    <ion-item >
+      
+      <ion-row >
+        <ion-col>
+          <div style="margin: 7%">  Client Name: </div>
+          <div style="margin: 7%">    Company Name: </div>
+          <div style="margin: 7%">    Address: </div>
+          <div style="margin: 7%">    Phone number: </div>
+        </ion-col>
+        <ion-col>
+          <ion-input [(ngModel)]="client_fullname"></ion-input>
+          <ion-input [(ngModel)]="company"></ion-input>
+          <ion-input [(ngModel)]="address"></ion-input>
+          <ion-input [(ngModel)]="phone"></ion-input>
+        </ion-col>
+        <ion-button style= "background-color:#130991" class= "actionbutton" expand="block" fill="clear" async (click)="updateClient()" > Update client </ion-button>
+      </ion-row>
+    
+    
+    </ion-item>
+    
+    <br>
+    <ion-label>From: </ion-label>
+    <br>
+    <ion-item >
+      <ion-row>
+        <ion-col>
+          <div style="margin: 7%">  Full Name: </div>
+          <div style="margin: 7%">    Company Name: </div>
+          <div style="margin: 7%">    Address: </div>
+          <div style="margin: 7%">    Phone number: </div>
+        </ion-col>
+        <ion-col>
+          <ion-input [(ngModel)]="info.name"></ion-input>
+          <ion-input [(ngModel)]="info.name_company"></ion-input>
+          <ion-input [(ngModel)]="info.name_address"></ion-input>
+          <ion-input [(ngModel)]="info.name_phone"></ion-input>
+        </ion-col>
+        <ion-button style= "background-color:#130991" class= "actionbutton" expand="block" fill="clear" async (click)=" updatedata()" > Update Data </ion-button>
+      </ion-row>
+    </ion-item>
+    <br>
+    <ion-label>Website service fee: </ion-label>
+    <br>
+    <ion-item >
+       <ion-row>
+      <div >
+      <ion-row >
+        <ion-col>
+          <div>
+          <label>Add item</label>
+          <ion-input [(ngModel)]="item1"  value="item"></ion-input>
+        </div>
+        </ion-col>
+        <ion-col>
+          <div>
+          <label>quantity</label>
+          <ion-input [(ngModel)]="quantity1" value="1"></ion-input>
+        </div>
+        </ion-col>
+          <ion-col>
+            <div>
+            <label>price</label>
+          <ion-input [(ngModel)]="price1" value="€0.00"></ion-input>
+        </div>
+        </ion-col>
+      </ion-row>
+    </div>
+    <ion-button style= "background-color:#130991" class= "actionbutton" expand="block" fill="clear"(click)="additem(item1, quantity1, price1)" > Add item </ion-button>
+    
+      <ion-row style="width: 100%">
+        <ion-row style="width: 50%; padding: 2%">
+          <ion-col>
+              <label>Subtotal:</label>
+          </ion-col>
+          </ion-row>
+        <ion-row style="width: 50%; padding: 2%">
+          <ion-col>
+              <label>subtotal</label>
+          </ion-col>
+          </ion-row>
+
+      </ion-row>
+    </ion-row>
+    </ion-item>
+  </div>
+</div>
+
+
+  
+    <!-- <img src="assets/colors.jpg" alt=""> -->
+    <h3>Invoice template</h3>
+
+    <!-- <div id="Html2Pdf" #Html2Pdf> -->
+      <div id="htmlData" #htmlData>
+  <div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="4" >
+                <table>
+                    <tr>
+                        <td style="text-align: center;">
+                            Invoice #: {{ninvoice}}<br>
+                            Created: <label>{{today}} </label><br>
+                            Due: February 1, 2015
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+         <tr class="information">
+           <td colspan="4"> 
+                <table >
+                    <tr>
+                        <td style="display: table-cell;">
+                          <label>{{info.name}} </label><br>
+                          <label>{{info.name_company}} </label><br>
+                          <label>{{info.name_address}} </label><br>
+                          <label>{{info.name_phone}} </label>
+                          
+                        </td>
+                        <td style="display: table-cell;">
+                          <label>{{client_fullname}} </label><br>
+                          <label>{{company}} </label><br>
+                          <label>{{address}}</label><br>
+                          <label>{{email}}</label>
+                        </td>
+                    </tr>
+                </table>
+           </td> 
+         </tr>   
+        <tr class="heading">
+            <td>
+                Item
+            </td>
+            <td>
+              quantity
+          </td>
+            <td>
+                Price
+            </td>
+        </tr>
+        <tr class = "clasic" *ngFor="let item of items" >
+      
+            <td >
+              <label >{{item.item}}</label>
+            </td>
+            <td>
+            <label>{{item.quantity}}</label>
+          </td>
+            <td>
+              <label>€{{item.price}}</label>
+            </td> 
+        </tr>
+      
+        
+        <tr class="total" >
+            <td ></td>
+            
+            <td>
+              <label> Total:</label> 
+            </td>
+            <td>
+              <label>{{total}}</label>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+<div class="buttons-action">
+
+  <!-- <ion-button class= "actionbutton" expand="block" fill="clear"  fill="outline" (click)="prosesdata()">Save invoice</ion-button> -->
+  
+  <ion-button  style= "background-color:#130991" class= "actionbutton" expand="block" fill="clear" fill="outline" (click)="onExportClick()" >Dowload PDF file </ion-button> 
+  
+</div>
+
+</ion-content>

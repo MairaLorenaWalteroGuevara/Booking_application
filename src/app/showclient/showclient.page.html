@@ -1,0 +1,160 @@
+<ion-header >
+
+  <ion-item color="secondary">
+  <ion-toolbar color="secondary">
+    <ion-title >{{client_fullname}}</ion-title>
+    <ion-buttons slot="secondary">
+    	<ion-back-button text="Back" icon="" color="light" fill="outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-item>
+</ion-header>
+
+<ion-content class="ion-padding" Style=" font-family: 'Nunito,'">
+
+  <div class="content">
+
+    <div class="smallcontent">
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+  <div>
+      <label> Client id :  </label>
+    </div>
+  </ion-col>
+  <ion-col>
+    <div>
+    <ion-item> {{client_id}} </ion-item>
+  </div>
+  </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+  <div>
+      <label> Project id :  </label>
+    </div>
+  </ion-col>
+  <ion-col>
+    <div>
+    <ion-item> {{project_id}} </ion-item>
+  </div>
+  </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+  <div>
+      <label> Project :  </label>
+    </div>
+  </ion-col>
+  <ion-col>
+    <div>
+    <ion-item> {{option}} </ion-item>
+  </div>
+  </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+  <div>
+      <label> Date apoinment :  </label>
+    </div>
+  </ion-col>
+  <ion-col>
+    <div>
+    <ion-item> {{date}} </ion-item>
+  </div>
+  </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <label> Hour apoinment: </label>
+          </div>
+         </ion-col>
+         <ion-col>
+          <div>
+            <ion-item> {{ hour}} </ion-item>
+         </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-label>Project Status: </ion-label>
+          </div>
+        </ion-col>
+      <ion-col>
+        <div>
+          <ion-item>{{status}} </ion-item>
+        </div>
+      </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-label>Assign to: </ion-label>
+          </div>
+        </ion-col>
+      <ion-col >
+        <div>
+          <ion-item >{{employee1}} </ion-item>
+        </div>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+
+      <div class= "separation" style="text-align: center;">
+        <div >
+          <label> Do you want to change the project status: </label>
+        </div>
+        <!-- I found in here how to width the select option in order to have more space to print the information https://forum.ionicframework.com/t/increase-width-of-ion-select/76794/6 -->
+      <div style="text-align: center;">
+        <ion-item>
+          <ion-select class="select-full-width" [ngModel]="status" name="status" (ngModelChange)="selectStatus($event)" >
+            <ion-select-option  *ngFor="let status of options" [value] = "status">{{status}} </ion-select-option>
+          </ion-select>
+        </ion-item>
+        </div>
+      </div>
+      <div class= "separation" style="text-align: center;">
+        <div>
+          <label> Who is going to work in this project: </label>
+        </div>
+      <div style="text-align: center;">
+        <ion-item >
+          <!-- multiple="true" -->
+          <ion-select class="select-full-width"  [ngModel]="employee"  (ngModelChange)="takemployee($event)" >
+            <ion-select-option  *ngFor="let employee of employeese" [value] = "employee" >{{employee.name}} </ion-select-option>
+          </ion-select>
+        </ion-item>
+        </div>
+      </div>
+  
+  </div>
+  
+  
+  <div class= "separation">
+  <br>
+  <ion-label boder="color:blue"  style="  font-family: 'Nunito, san-serif; '" >Project Outcomes: </ion-label>
+  <br>
+  
+    <div style ="border-style: ridge">
+      <ion-item >
+        
+      <ion-textarea   type="text" [(ngModel)]="comment" ></ion-textarea>
+    
+    </ion-item>
+  </div>
+  
+  </div>
+  <div class="buttons-action">
+   
+    <ion-button fill="outline" async (click)="updateClient()">Save </ion-button>
+     <ion-button fill="outline" (click)="updateEmployee()" > Save assign </ion-button>
+  
+  </div>
+  </div>
+
+  <!-- how to change the option select and print in other place https://stackblitz.com/edit/ionic-3-how-to-set-ion-option-as-selected?file=pages%2Fhome%2Fhome.html -->
+  
+</ion-content>

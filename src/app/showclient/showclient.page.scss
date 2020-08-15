@@ -1,0 +1,39 @@
+.content{
+  margin-top:5%;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.separation{
+  padding-top: 5%;
+}
+
+.smallcontent{
+  margin-left:5%;
+  margin-right:5%;
+  justify-content: center;
+
+}
+
+.my-select {
+  min-width: 70%;
+  }
+
+  ion-select{
+    max-width: 70% !important;
+}
+
+.select-full-width {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+}
+
+.buttons-action{
+  justify-content: right;
+  position: right; 
+  align-items: right;
+  margin-left:auto;
+  display:flex;
+  justify-content: flex-end;
+}

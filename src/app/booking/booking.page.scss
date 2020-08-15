@@ -1,0 +1,21 @@
+:host ::ng-deep {
+  .monthview-container {
+      height: auto !important;
+  }
+
+  .event-detail-container {
+      display: none;
+  }
+}
+
+:host ::ng-deep {
+  .monthview-primary-with-event {
+    background-color:rgb(227, 224, 224) !important;
+  }
+ 
+  .monthview-selected {
+    background-color: var(white) !important;
+  }
+
+
+}

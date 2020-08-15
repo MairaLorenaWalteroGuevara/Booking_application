@@ -1,0 +1,33 @@
+  //ion-page.tab1{
+    // --background: url('../assets/colors.jpg') 0 0/100% 100% no-repeat;
+    // background-image: url('../assets/colors.jpg');
+    // background-repeat: no-repeat;
+    // background-position: center;
+  //   // background-size: contain;
+  //    .myview {
+ 
+    
+  //     background-image: url('../../assets/colors.jpg');
+  //     background-repeat: no-repeat;
+  //    background-size: cover;
+  //     }
+
+
+  
+  // ion-page.tab1>ion-content{
+  //   background-color:transparent;
+  // }
+
+  .header{
+    --background: var(--charcoal, #36454f);
+    color: blue($color: #0c2389);
+    background-color: blue($color: #0c2389);
+    text-align: center;
+    font-size: medium;
+  }
+
+  ion-content.backgroun{
+    --background:url('../../assets/colors.jpg') 0 0/100% 100% no-repeat;
+    --background-color:blue; 
+    --background:url('../../assets/colors.jpg') ;
+  }

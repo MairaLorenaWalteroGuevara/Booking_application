@@ -1,0 +1,45 @@
+.actionbutton{
+ position: absolute;
+ text-align: right;
+  background-color: #130991;
+  color:white;
+  border-radius:5px;
+  margin-left: 5px;
+  margin-right:13px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size:small ;
+  font-family:'Nunito',sans-serif;
+ 
+}
+
+// Felx box style --- https://stackoverflow.com/questions/6632340/place-a-button-right-aligned/6632367
+
+
+.buttons-action{
+  justify-content: right;
+  position: right; 
+  align-items: right;
+  margin-left:auto;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.content{
+  
+  margin-top:50px;
+  margin-left:40px;
+  margin-right:40px;
+}
+
+.separation{
+  padding-top: 5%;
+}
+
+.smallcontent{
+  margin-left:5%;
+  margin-right:5%;
+  justify-content: center;
+
+}
+

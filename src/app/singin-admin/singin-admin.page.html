@@ -1,0 +1,41 @@
+
+<ion-content >
+  <div class="content">
+    <div class="buttons-action">
+      <ion-button fill="clear" color="dark" size="small" routerLink="/tabs/tab3" routerDirection="root">
+      <b><p class="signin-text">SIGN IN</p></b></ion-button>
+      <ion-button fill="clear" color="dark" size="small">
+        <p class="signup-text"><b>REGISTER</b></p>
+      </ion-button>
+    </div>
+    
+    
+    <div class="ion-padding">
+      
+      <ion-item>
+        <ion-label position="floating" style=" align-self: center; font-family: 'Nunito, san-serif;'">Username</ion-label>
+        <ion-input type="text" [(ngModel)]="adminame"></ion-input>
+      </ion-item>
+      <br>
+      <div Style="display:flex; justify-content:space-between ;">
+      <ion-item >
+        <ion-label position="floating" style=" font-family: 'Nunito, san-serif;'">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" style=" float:right; font-family: 'Nunito, san-serif;'">Confirm Password</ion-label>
+        <ion-input type="password" [(ngModel)]="confirm_password"></ion-input>
+      </ion-item>
+    </div>
+        
+    </div>
+  
+    <div>
+    <ion-button class="actionbutton" (click)= "prosesRegister()" expand="block" fill="clear" style="text-transform: none; background-color:#130991;"><p>Register</p></ion-button>
+    <br>
+    <ion-button class="actionbutton" (click)= "formLogin()"expand="full" fill="clear" style="text-transform: none;border:2px solid #1e11d1; color: #1e11d1 "><p>Sign In</p></ion-button>
+  
+  </div>
+  </div>
+  
+  </ion-content>

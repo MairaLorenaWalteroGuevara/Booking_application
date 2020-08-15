@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>employee</ion-title>
+    <ion-buttons slot="secondary">
+    	<ion-back-button text="Back" icon="" color="" fill="outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="htmlData" #htmlData>
+    <div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+      <tr class="heading">
+        <td>
+            Employee name:
+        </td>
+        <td>
+          Project_id:
+      </td>
+        <td>
+            Appointment:
+        </td>
+    </tr>
+    <tr class = "clasic" *ngFor="let employee of employeese" >
+      
+      <td >
+        <label >{{employee.employee_name}}</label>
+      </td>
+      <td>
+      <label>{{employee.project_id}}</label>
+    </td>
+      <td>
+        <label>{{employee.appointment_date}}</label>
+      </td> 
+  </tr>
+</table>
+</div>
+
+
+</div>
+
+  <div class="buttons-action">
+
+    
+    <ion-button  style= "background-color:#130991" class= "actionbutton" expand="block" fill="clear" fill="outline" (click)="onExportFile()" >Dowload PDF file </ion-button> 
+    
+  </div>
+
+</ion-content>

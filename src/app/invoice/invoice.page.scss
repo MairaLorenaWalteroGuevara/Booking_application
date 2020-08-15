@@ -1,0 +1,204 @@
+
+// Invoice CSS template https://github.com/sparksuite/simple-html-invoice-template/blob/master/invoice.html
+// Style for the grid https://github.com/ionic-team/ionic-docs/blob/master/src/demos/api/grid/index.html
+
+.invoice-box {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #eee;
+  // box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  color: #555;
+}
+
+.invoice-box table {
+  width: 100%;
+  line-height: inherit;
+  text-align: left;
+}
+
+.invoice-box table td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(3) {
+  text-align: right;
+}
+
+.invoice-box table tr.top table td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.top table td.title {
+  font-size: 45px;
+  line-height: 45px;
+  color: #333;
+}
+
+.invoice-box table tr.information table td {
+  padding-bottom: 5%;
+}
+
+.invoice-box table tr.heading td {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.invoice-box table tr.clasic td {
+  //background: #eee;
+  border:solid  #ddd;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td{
+  border-bottom: 1px solid #eee;
+}
+
+.invoice-box table tr.item.last td {
+  border-bottom: none;
+}
+
+.invoice-box table tr.total td:nth-child(3) {
+  border-top: 2px solid #eee;
+  font-weight: bold;
+  background:  #eee;
+  text-align:left;
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .invoice-box table tr.top table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+  }
+  
+  .invoice-box table tr.information table td {
+      width: 50%;
+      text-align: left;
+  }
+}
+
+/** RTL **/
+.rtl {
+  direction: rtl;
+  font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+}
+
+.rtl table {
+  text-align: right;
+}
+
+.rtl table tr td:nth-child(2) {
+  text-align: left;
+}
+
+
+.content{
+  
+  margin-top:5%;
+  margin-left:5%;
+  margin-right:5%;
+  
+}
+
+.separation{
+  padding-top: 5%;
+}
+
+.smallcontent{
+  margin-left:5%;
+  margin-right:5%;
+  justify-content: center;
+
+}
+
+// .ion-row{
+//   margin: 2%;
+//   padding: 2%;
+//   border-color: blue($color: #2916d6);
+  
+// }
+
+.label{
+  padding: 10%;
+  text-justify: auto;
+  margin: 5%;
+  
+
+}
+
+.item{
+  border-radius: 5%;
+  border-color: blue($color: #faf9fc);
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
+  padding: 2%;
+ // margin: 5%;
+ 
+}
+
+// ion-col > div {
+//   // background-color: #f7f7f7;
+//   // border: solid 1px #ddd;
+//   padding: 2%;
+// }
+
+// ion-row > div {
+// //   background-color: #f7f7f7;
+// //   border: solid 1px #ddd;
+// //   padding: 0;
+// //    width: 100%;
+//  }
+h3{
+  text-align: center;
+}
+
+ion-row{
+//   background-color: #f7f7f7;
+//   border: solid 1px #ddd;
+//   padding: 5%;
+width: 100%;
+}
+
+
+// ion-input > ion-col > div {
+//   background-color: #f7f7f7;
+//   border: solid 1px #ddd;
+//   padding: 10px;
+// }
+
+.grid-container {
+  padding: 0;
+  grid-template-columns: auto auto auto;
+  display: grid;
+  grid-column-gap: 50px;
+  
+ // display:grid;
+}
+
+
+.actionbutton{
+  
+  box-shadow: 0 0.2px 0.2px 0 rgba(0,0,0,0.2), 0 0.2px 0.2px 0 rgba(0,0,0,0.19);
+  color:white;
+  border:solid;
+  border-color: rgba(128, 128, 128, 0.225);
+  border-radius:5px;
+  margin-left:15px;
+  margin-right:13px;
+  font-size:x-small ;
+  width: 100%;
+  font-family:'Nunito',sans-serif;
+}
+

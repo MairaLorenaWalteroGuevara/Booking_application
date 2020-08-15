@@ -1,0 +1,55 @@
+<ion-header>
+ 
+  <!-- Calendar design and funtinalities are base in simon grimm tutorias from ionic Academy https://devdactic.com/ionic-4-calendar-app/ --- https://www.youtube.com/watch?v=m8jA74YAOq4 ---- https://devdactic.com/ionic-5-calendar-modal/ ---https://devdactic.com/ionic-calendar-app/ -->
+
+  <ion-item color="primary">
+    <ion-title>{{viewTitle}}</ion-title>
+    <div Style="background-color: primary;">
+    <ion-buttons slot="primary">
+    <ion-buttons slot="primary">
+    	<ion-back-button text="" slot="end" icon="log-out" name="log-out" color="light" fill="outline"></ion-back-button>
+    </ion-buttons>
+  </ion-buttons>
+  </div>
+   
+</ion-item>
+
+  
+
+</ion-header>
+
+<ion-content class="ion-padding">
+
+
+  <div class="ion-padding">
+  
+
+  <calendar 
+  
+            [eventSource]="eventSource"
+            [calendarMode]="calendar.mode"
+            [currentDate]="calendar.currentDate"
+            (onCurrentDateChanged)="onCurrentDateChanged($event)"
+            (onTitleChanged)="onViewTitleChanged($event)"
+            (onTimeSelected)="onTimeSelected($event)"
+            step="30"
+            startingDayWeek="1"
+            [monthviewDisplayEventTemplate]="template"
+            [markDisabled]="markDisabled">
+  </calendar>
+
+  
+  <ng-template #template let-view="view" let-row="row" let-col="col">
+    <div [class.with-event]="view.dates[row*7+col].events.length">
+      {{view.dates[row*7+col].label}}
+      <div class="indicator-container">
+        <div class="event-indicator" *ngFor="let e of view.dates[row*7+col].events"></div>
+      </div>
+      </div>
+    </ng-template>
+  
+
+  </div>
+
+
+</ion-content>

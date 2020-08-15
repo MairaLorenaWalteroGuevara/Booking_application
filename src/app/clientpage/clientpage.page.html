@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>Welcome {{username}}</ion-title> -->
+    <ion-title>Welcome {{fullname}}</ion-title>
+    <ion-buttons slot="primary">
+    	<ion-button color="tertiary" fill="outline" (click)="prosesLogout()"><ion-icon slot="end" name="log-out"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="content">
+
+  <div class="smallcontent">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+<div>
+    <label> Date apoinment :  </label>
+  </div>
+</ion-col>
+<ion-col>
+  <div>
+  <ion-item> {{apoinmentday}} </ion-item>
+</div>
+</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <label> Hour apoinment: </label>
+</div>
+</ion-col>
+<ion-col>
+  <div>
+    <label> {{ event.bookinghour}} </label>
+</div>
+</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <label> Project status: </label>
+        </div>
+      </ion-col>
+    <ion-col>
+      <div>
+        <label>{{event.status}} </label>
+      </div>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</div>
+<div class= "separation">
+
+<div style =" border-style: ridge;">
+  <ion-item>
+    <ion-label boder="color:blue" position="floating" style="  font-family: 'Nunito, san-serif; '" >Comments</ion-label>
+    <ion-textarea type="text" [(ngModel)]="event.comment" ></ion-textarea>
+  </ion-item>
+  </div>
+
+  <div class="buttons-action">
+   
+    <ion-button fill="outline" (click)="openCalModal()"  [disabled]="disableButton"[disabled]="clients.length>0">Booking </ion-button>
+    <!-- <ion-button fill="outline" (click)="loadClients()" >Poject </ion-button> -->
+  
+  </div>
+</div>
+</div>
+</ion-content>

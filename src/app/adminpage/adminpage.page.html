@@ -1,0 +1,50 @@
+<ion-header>
+
+  <!-- The code present in here was base in the code of this project : IONIC 4 CRUD WITH PHP MYSQL - COMPLETE SOURCODE
+  https://www.youtube.com/watch?v=oXdS4KNw0WE -->
+  <ion-toolbar>
+    <ion-title>
+      Admin page 
+    </ion-title>
+    
+    <ion-buttons slot="primary">
+    
+      <ion-button color="tertiary" fill="outline" (click)= "staff()"><ion-icon slot="end" name="folder-open-outline"></ion-icon></ion-button>
+      <ion-button color="tertiary" fill="outline" (click)= "calendarpage()"><ion-icon slot="end" name="calendar"></ion-icon></ion-button>
+    <ion-button color="tertiary" fill="outline" (click)="prosesLogout()"><ion-icon slot="end" name="log-out"></ion-icon></ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="ion-padding">
+
+<ion-list>
+  <ion-item-sliding *ngFor="let project of projects">
+    
+     <ion-item-options side="start">
+        <ion-item-option color="danger" (click)="delClient(project.client_id)">Delete</ion-item-option>
+      </ion-item-options> 
+
+
+      <ion-item>
+        <ion-label>{{project.client_id}}</ion-label>
+        <ion-label>{{project.client_fullname}}</ion-label>
+        <ion-label>{{project.project_id}}</ion-label>
+        <ion-label>{{project.booking_option}}</ion-label>
+        
+      </ion-item>
+
+    
+      <ion-item-options side="end">
+
+        <ion-item-option color="secondary" (click)="showClient(project)">Show</ion-item-option>
+
+        <ion-item-option (click)="updateClient(project.client_id)">invoice</ion-item-option> 
+
+      </ion-item-options> 
+
+  </ion-item-sliding>
+</ion-list>
+
+
+</ion-content>

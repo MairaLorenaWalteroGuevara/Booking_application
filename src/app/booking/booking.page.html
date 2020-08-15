@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ viewTitle }}</ion-title>
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  
+<div>
+  
+
+      <calendar 
+            *ngIf="modalReady"
+            [eventSource]="eventSource"
+            [calendarMode]="calendar.mode"
+            [currentDate]="calendar.currentDate"
+            (onTitleChanged)="onViewTitleChanged($event)"
+            (onTimeSelected)="onTimeSelected($event)"
+            noEventsLabel=""
+            startHour="9"
+            endHour="18"
+            step="30"
+            startingDayWeek="1"
+            [monthviewDisplayEventTemplate]="template"
+            [markDisabled]="markDisabled">
+      </calendar>
+
+      <ng-template #template let-view="view" let-row="row" let-col="col">
+        <div [class.with-event]="view.dates[row*7+col].events.length">
+          {{view.dates[row*7+col].label}}
+          <div class="indicator-container">
+            <div class="event-indicator" *ngFor="let e of view.dates[row*7+col].events"></div>
+          </div>
+          </div>
+        </ng-template>
+
+</div> 
+
+<div>
+<ion-item>
+  <ion-label style=" font-family: 'Nunito,'">Choose an hour option: </ion-label>
+  
+  <ion-select placeholder="Select One" [(ngModel)]="event.bookinghour" >
+   
+
+    <ion-select-option  *ngFor="let hour of hours"  style=" font-family: 'Nunito,'"  >{{hour}}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+</div>
+
+<div>
+<ion-item>
+  <ion-label style=" font-family: 'Nunito,'">Select an option: </ion-label>
+  
+  <ion-select placeholder="Select One" [(ngModel)]="event.bookingoption" >
+
+    <ion-select-option  *ngFor="let option of options" [value] = "option" style=" font-family: 'Nunito,'"  >{{option}}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+</div>
+<div style =" border-style: ridge;">
+  <ion-item>
+    <ion-label boder="color:blue" position="floating" style="  font-family: 'Nunito, san-serif; '" >Comments</ion-label>
+    <ion-textarea type="text" [(ngModel)]="event.comment" ></ion-textarea>
+  </ion-item>
+  </div>
+
+
+  
+  <ion-button (click)="addNewEvent()">BOOK</ion-button>
+  
+</ion-content>

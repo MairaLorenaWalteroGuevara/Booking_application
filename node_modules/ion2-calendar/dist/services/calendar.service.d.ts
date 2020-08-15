@@ -1,0 +1,18 @@
+import { CalendarOriginal, CalendarDay, CalendarMonth, CalendarModalOptions, CalendarResult } from '../calendar.model';
+import * as ɵngcc0 from '@angular/core';
+export declare class CalendarService {
+    constructor();
+    readonly DEFAULT_STEP: number;
+    safeOpt(calendarOptions?: any): CalendarModalOptions;
+    createOriginalCalendar(time: number): CalendarOriginal;
+    findDayConfig(day: any, opt: CalendarModalOptions): any;
+    createCalendarDay(time: number, opt: CalendarModalOptions, month?: number): CalendarDay;
+    createCalendarMonth(original: CalendarOriginal, opt: CalendarModalOptions): CalendarMonth;
+    createMonthsByPeriod(startTime: number, monthsNum: number, opt: CalendarModalOptions): Array<CalendarMonth>;
+    wrapResult(original: CalendarDay[], pickMode: string): any;
+    multiFormat(time: number): CalendarResult;
+    static ɵfac: ɵngcc0.ɵɵFactoryDef<CalendarService, never>;
+    static ɵprov: ɵngcc0.ɵɵInjectableDef<CalendarService>;
+}
+
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2FsZW5kYXIuc2VydmljZS5kLnRzIiwic291cmNlcyI6WyJjYWxlbmRhci5zZXJ2aWNlLmQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7O0FBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDYWxlbmRhck9yaWdpbmFsLCBDYWxlbmRhckRheSwgQ2FsZW5kYXJNb250aCwgQ2FsZW5kYXJNb2RhbE9wdGlvbnMsIENhbGVuZGFyUmVzdWx0IH0gZnJvbSAnLi4vY2FsZW5kYXIubW9kZWwnO1xuZXhwb3J0IGRlY2xhcmUgY2xhc3MgQ2FsZW5kYXJTZXJ2aWNlIHtcbiAgICBjb25zdHJ1Y3RvcigpO1xuICAgIHJlYWRvbmx5IERFRkFVTFRfU1RFUDogbnVtYmVyO1xuICAgIHNhZmVPcHQoY2FsZW5kYXJPcHRpb25zPzogYW55KTogQ2FsZW5kYXJNb2RhbE9wdGlvbnM7XG4gICAgY3JlYXRlT3JpZ2luYWxDYWxlbmRhcih0aW1lOiBudW1iZXIpOiBDYWxlbmRhck9yaWdpbmFsO1xuICAgIGZpbmREYXlDb25maWcoZGF5OiBhbnksIG9wdDogQ2FsZW5kYXJNb2RhbE9wdGlvbnMpOiBhbnk7XG4gICAgY3JlYXRlQ2FsZW5kYXJEYXkodGltZTogbnVtYmVyLCBvcHQ6IENhbGVuZGFyTW9kYWxPcHRpb25zLCBtb250aD86IG51bWJlcik6IENhbGVuZGFyRGF5O1xuICAgIGNyZWF0ZUNhbGVuZGFyTW9udGgob3JpZ2luYWw6IENhbGVuZGFyT3JpZ2luYWwsIG9wdDogQ2FsZW5kYXJNb2RhbE9wdGlvbnMpOiBDYWxlbmRhck1vbnRoO1xuICAgIGNyZWF0ZU1vbnRoc0J5UGVyaW9kKHN0YXJ0VGltZTogbnVtYmVyLCBtb250aHNOdW06IG51bWJlciwgb3B0OiBDYWxlbmRhck1vZGFsT3B0aW9ucyk6IEFycmF5PENhbGVuZGFyTW9udGg+O1xuICAgIHdyYXBSZXN1bHQob3JpZ2luYWw6IENhbGVuZGFyRGF5W10sIHBpY2tNb2RlOiBzdHJpbmcpOiBhbnk7XG4gICAgbXVsdGlGb3JtYXQodGltZTogbnVtYmVyKTogQ2FsZW5kYXJSZXN1bHQ7XG59XG4iXX0=
