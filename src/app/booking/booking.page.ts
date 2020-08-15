@@ -130,7 +130,7 @@ export class BookingPage implements OnInit, AfterViewInit {
     this.event.client = this.params.get('fullname');
     this.event.clientid = this.params.get('clientid');
 
-    this.loadBookings();
+    //this.loadBookings();
     this.find_duplicate_in_array();
 
     this.loaddisabledays();
